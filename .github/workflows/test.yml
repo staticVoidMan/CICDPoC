@@ -14,11 +14,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Cocoapods
+      run: pod install --repo-update
+
     - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.7.2
 
     - uses: maierj/fastlane-action@v2.0.1
+      with:
+        lane: 'test'
 
     - name: Setup SSH Keys and known_hosts
       env: 
@@ -33,9 +38,6 @@ jobs:
       run: |
         git clone git@github.com:staticVoidMan/CICDPoC-Certs.git
         ls CICDPoC-Certs
-
-    - name: Cocoapods
-      run: pod install --repo-update
 
     - name: Fastlane
       env:
