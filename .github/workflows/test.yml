@@ -32,8 +32,8 @@ jobs:
         git clone git@github.com:staticVoidMan/CICDPoC-Certs.git
         ls CICDPoC-Certs
 
-#    - name: Install Pods
-#      run: pod install --repo-update
+    - name: Cocoapods
+      run: pod install --repo-update
 
     - name: Fastlane
       run: fastlane test
