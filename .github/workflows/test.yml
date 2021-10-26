@@ -36,6 +36,8 @@ jobs:
       run: pod install --repo-update
 
     - name: Fastlane
+      env:
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
       run: bundle exec fastlane test
 
 #    - name: Unit Tests via xcodebuild
