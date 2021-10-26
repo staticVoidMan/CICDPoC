@@ -18,12 +18,23 @@ jobs:
       run: |
         echo "${{ secrets.SSH_GIT_CERTS }}"
 
-    - name: Install Pods
-      run: pod install --repo-update
-
-    - name: Unit Tests via xcodebuild
+    - name: Setup SSH Keys and known_hosts
+      env: SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: |
-        xcodebuild test \
-        -workspace CICDPoC.xcworkspace \
-        -scheme CICDPoC \
-        -destination 'platform=iOS Simulator,name=iPhone 12'
+        ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+        ssh-add - <<< "${{ secrets.SSH_GIT_CERTS }}"
+
+    - name: Checkout Certs
+      run: |
+        git clone git@github.com:staticVoidMan/CICDPoC-Certs.git
+        ls CICDPoC-Certs
+
+#    - name: Install Pods
+#      run: pod install --repo-update
+
+#    - name: Unit Tests via xcodebuild
+#      run: |
+#        xcodebuild test \
+#        -workspace CICDPoC.xcworkspace \
+#        -scheme CICDPoC \
+#        -destination 'platform=iOS Simulator,name=iPhone 12'
