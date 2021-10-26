@@ -16,15 +16,11 @@ jobs:
 
     - uses: actions/setup-ruby@v1
       with:
-        ruby-version: '2.7.2'
+        ruby-version: 2.7.2
 
     - uses: maierj/fastlane-action@v2.0.1
       with:
         lane: 'test'
-
-    - name: Tell me a Secret.
-      run: |
-        echo "${{ secrets.SSH_GIT_CERTS }}"
 
     - name: Setup SSH Keys and known_hosts
       env: 
