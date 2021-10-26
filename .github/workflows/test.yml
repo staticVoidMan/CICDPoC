@@ -16,8 +16,7 @@ jobs:
 
     - name: Tell me a Secret.
       run: |
-        echo ${{SSH_GIT_CERTS}}
-        echo "${{SSH_GIT_CERTS}}"
+        echo "${{ secrets.SSH_GIT_CERTS }}"
 
     - name: Install Pods
       run: pod install --repo-update
