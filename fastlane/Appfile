@@ -1,8 +1,5 @@
-app_identifier("com.codewalla.CICDPoC") # The bundle identifier of your app
-apple_id("amin.s@codewalla.com") # Your Apple email address
+app_identifier(ENV["DEVELOPER_APP_IDENTIFIER"])
+apple_id(ENV["FASTLANE_APPLE_ID"])
 
-itc_team_id("117516") # App Store Connect Team ID
-team_id("E643U2KPYB") # Developer Portal Team ID
-
-# For more information about the Appfile, see:
-#     https://docs.fastlane.tools/advanced/#appfile
+itc_team_id(ENV["APP_STORE_CONNECT_TEAM_ID"])
+team_id(ENV["DEVELOPER_PORTAL_TEAM_ID"])
