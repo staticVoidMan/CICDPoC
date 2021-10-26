@@ -35,6 +35,9 @@ jobs:
 #    - name: Install Pods
 #      run: pod install --repo-update
 
+    - name: Fastlane
+      run: fastlane test
+
 #    - name: Unit Tests via xcodebuild
 #      run: |
 #        xcodebuild test \
