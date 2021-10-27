@@ -31,6 +31,7 @@
 		5E4A78055384E751E4C758CF /* Pods-CICDPoC-CICDPoCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CICDPoC-CICDPoCUITests.release.xcconfig"; path = "Target Support Files/Pods-CICDPoC-CICDPoCUITests/Pods-CICDPoC-CICDPoCUITests.release.xcconfig"; sourceTree = "<group>"; };
 		81883C92A8262B009D3B079A /* Pods_CICDPoC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CICDPoC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8E36765D99F998108AA26D /* Pods_CICDPoCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CICDPoCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		901A529F2729530500F44E38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		90DEF9C72726CA45002E651E /* CICDPoC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CICDPoC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90DEF9CA2726CA45002E651E /* CICDPoCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CICDPoCApp.swift; sourceTree = "<group>"; };
 		90DEF9CC2726CA45002E651E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		90DEF9C92726CA45002E651E /* CICDPoC */ = {
 			isa = PBXGroup;
 			children = (
+				901A529F2729530500F44E38 /* Info.plist */,
 				90DEF9CA2726CA45002E651E /* CICDPoCApp.swift */,
 				90DEF9CC2726CA45002E651E /* ContentView.swift */,
 				90DEF9CE2726CA48002E651E /* Assets.xcassets */,
@@ -455,6 +457,7 @@
 				DEVELOPMENT_TEAM = E643U2KPYB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CICDPoC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -489,6 +492,7 @@
 				DEVELOPMENT_TEAM = E643U2KPYB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CICDPoC/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
