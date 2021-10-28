@@ -83,6 +83,11 @@ platform :ios do
       api_key: api_key
     )
 
+    scan(
+      workspace: "#{APP_WORKSPACE_NAME}",
+      devices: ["iPhone 12"]
+    )
+
     gym(
       configuration: "Release",
       workspace: "#{APP_WORKSPACE_NAME}",
@@ -93,11 +98,6 @@ platform :ios do
             DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER
         }
       }
-    )
-
-    scan(
-      workspace: "#{APP_WORKSPACE_NAME}",
-      devices: ["iPhone 12"]
     )
 
     pilot(
