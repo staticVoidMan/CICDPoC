@@ -18,9 +18,6 @@ jobs:
     - name: Checking out repo
       uses: actions/checkout@v2
 
-    - name: Installing Pods
-      run: pod install --repo-update
-
     - name: Installing Fastlane Dependencies
       uses: ruby/setup-ruby@v1
       with:

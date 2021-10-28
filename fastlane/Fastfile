@@ -52,9 +52,9 @@ platform :ios do
     
 #    increment_build_number(xcodeproj: "#{APP_PROJECT_NAME}")
     
-#    cocoapods(
-#      clean_install: true
-#    )
+    cocoapods(
+      clean_install: true
+    )
 
     match(
       type: 'appstore',
