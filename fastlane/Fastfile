@@ -76,7 +76,7 @@ platform :ios do
 
     scan(
       workspace: "CICDPoC.xcworkspace",
-      devices: ["iPhone 13"]
+      devices: ["iPhone 12"]
     )
 
     pilot(
