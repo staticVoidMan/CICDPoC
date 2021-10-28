@@ -74,6 +74,11 @@ platform :ios do
       }
     )
 
+    scan(
+      workspace: "CICDPoC.xcworkspace",
+      devices: ["iPhone 13"]
+    )
+
     pilot(
       apple_id: "#{DEVELOPER_APP_ID}",
       app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
