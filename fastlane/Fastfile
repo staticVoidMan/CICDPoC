@@ -10,6 +10,10 @@ APPLE_KEY_ID = ENV["APPLE_KEY_ID"]
 APPLE_KEY_CONTENT = ENV["APPLE_KEY_CONTENT"]
 GIT_AUTHORIZATION = ENV["GIT_AUTHORIZATION"]
 
+APP_WORKSPACE_NAME = "CICDPoC.xcworkspace"
+APP_NAME = "CICDPoC"
+APP_RELEASE_SCHEME = "CICDPoC"
+
 def delete_temp_keychain(name)
   delete_keychain(
     name: name
@@ -31,7 +35,7 @@ def ensure_temp_keychain(name, password)
 end
 
 platform :ios do
-  lane :test do
+  lane :release do
     keychain_name = TEMP_KEYCHAIN_USER
     keychain_password = TEMP_KEYCHAIN_PASSWORD
     ensure_temp_keychain(keychain_name, keychain_password)
@@ -60,12 +64,10 @@ platform :ios do
       api_key: api_key
     )
 
-#    build_app(workspace: "CICDPoC.xcworkspace", scheme: "CICDPoC")
-
     gym(
       configuration: "Release",
-      workspace: "CICDPoC.xcworkspace",
-      scheme: "CICDPoC",
+      workspace: "#{APP_WORKSPACE_NAME}",
+      scheme: "#{APP_RELEASE_SCHEME}",
       export_method: "app-store",
       export_options: {
         provisioningProfiles: { 
@@ -75,7 +77,7 @@ platform :ios do
     )
 
     scan(
-      workspace: "CICDPoC.xcworkspace",
+      workspace: "#{APP_WORKSPACE_NAME}",
       devices: ["iPhone 12"]
     )
 
@@ -86,7 +88,7 @@ platform :ios do
       skip_submission: true,
       distribute_external: false,
       notify_external_testers: false,
-      ipa: "./CICDPoC.ipa"
+      ipa: "./#{APP_NAME}.ipa"
     )
 
     delete_temp_keychain(keychain_name)
