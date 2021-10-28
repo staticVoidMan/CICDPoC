@@ -1,5 +1,11 @@
 default_platform(:ios)
 
+APP_NAME = "CICDPoC"
+APP_PROJECT_NAME = "CICDPoC.xcodeproj"
+APP_WORKSPACE_NAME = "CICDPoC.xcworkspace"
+
+APP_RELEASE_SCHEME = "CICDPoC"
+
 DEVELOPER_APP_ID = ENV["DEVELOPER_APP_ID"]
 DEVELOPER_APP_IDENTIFIER = ENV["DEVELOPER_APP_IDENTIFIER"]
 PROVISIONING_PROFILE_SPECIFIER = ENV["PROVISIONING_PROFILE_SPECIFIER"]
@@ -9,10 +15,6 @@ APPLE_ISSUER_ID = ENV["APPLE_ISSUER_ID"]
 APPLE_KEY_ID = ENV["APPLE_KEY_ID"]
 APPLE_KEY_CONTENT = ENV["APPLE_KEY_CONTENT"]
 GIT_AUTHORIZATION = ENV["GIT_AUTHORIZATION"]
-
-APP_WORKSPACE_NAME = "CICDPoC.xcworkspace"
-APP_NAME = "CICDPoC"
-APP_RELEASE_SCHEME = "CICDPoC"
 
 def delete_temp_keychain(name)
   delete_keychain(
@@ -48,11 +50,11 @@ platform :ios do
       in_house: false
     )
     
-#    increment_build_number(xcodeproj: "CICDPoC.xcodeproj")
+#    increment_build_number(xcodeproj: "#{APP_PROJECT_NAME}")
     
-    cocoapods(
-      clean_install: true
-    )
+#    cocoapods(
+#      clean_install: true
+#    )
 
     match(
       type: 'appstore',
