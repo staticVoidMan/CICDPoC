@@ -13,6 +13,7 @@ jobs:
   deploy:
     name: Deploying to AppStore
     runs-on: macos-latest
+    timeout-minutes: 20
     
     steps:
     - name: Checking out repo
