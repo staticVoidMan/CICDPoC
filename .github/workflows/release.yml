@@ -24,6 +24,10 @@ jobs:
       with:
         ruby-version: 2.7.2
 
+    - name: Logs
+      run: |
+        cat .bundle/config
+
     - name: Running Fastlane
       uses: maierj/fastlane-action@v2.0.1
       with:
@@ -42,3 +46,7 @@ jobs:
         GIT_AUTHORIZATION: '${{ secrets.GIT_AUTHORIZATION }}'
         TEMP_KEYCHAIN_PASSWORD: '${{ secrets.TEMP_KEYCHAIN_PASSWORD }}'
         TEMP_KEYCHAIN_USER: '${{ secrets.TEMP_KEYCHAIN_USER }}'
+
+    - name: Logs
+      run: |
+        cat .bundle/config

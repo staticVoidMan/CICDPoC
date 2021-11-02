@@ -53,8 +53,8 @@ platform :ios do
       xcodeproj: "#{APP_PROJECT_NAME}"
     )
     
-    clean_build_artifacts
-    commit_version_bump(xcodeproj: "#{APP_PROJECT_NAME}")
-    add_git_tag
+#    clean_build_artifacts
+#    commit_version_bump(xcodeproj: "#{APP_PROJECT_NAME}")
+#    add_git_tag
   end
 end
