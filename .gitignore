@@ -84,7 +84,6 @@ fastlane/test_output
 fastlane/*.env
 fastlane/*.env.*
 Gemfile.lock
-.bundle/*
 
 # Code Injection
 #

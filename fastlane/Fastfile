@@ -52,6 +52,8 @@ platform :ios do
       build_number: latest_testflight_build_number(api_key: api_key) + 1,
       xcodeproj: "#{APP_PROJECT_NAME}"
     )
+    
+    clean_build_artifacts
     commit_version_bump(xcodeproj: "#{APP_PROJECT_NAME}")
     add_git_tag
   end
