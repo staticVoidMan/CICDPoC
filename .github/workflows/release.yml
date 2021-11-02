@@ -24,10 +24,6 @@ jobs:
       with:
         ruby-version: 2.7.2
 
-    - name: Logs
-      run: |
-        cat .bundle/config
-
     - name: Running Fastlane
       uses: maierj/fastlane-action@v2.0.1
       with:
