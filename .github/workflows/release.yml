@@ -45,4 +45,10 @@ jobs:
 
     - name: Logs
       run: |
-        cat .bundle/config
+        ls
+
+    - name: Create Release
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "Podfile"
+        token: ${{ secrets.GIT_AUTHORIZATION }}
