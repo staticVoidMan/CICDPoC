@@ -44,13 +44,3 @@ jobs:
         GIT_AUTHORIZATION: '${{ secrets.GIT_AUTHORIZATION }}'
         TEMP_KEYCHAIN_PASSWORD: '${{ secrets.TEMP_KEYCHAIN_PASSWORD }}'
         TEMP_KEYCHAIN_USER: '${{ secrets.TEMP_KEYCHAIN_USER }}'
-
-    - name: Logs
-      run: |
-        ls
-
-    - name: Create Release
-      uses: ncipollo/release-action@v1
-      with:
-        artifacts: "Podfile"
-        token: ${{ secrets.GIT_AUTHORIZATION }}
