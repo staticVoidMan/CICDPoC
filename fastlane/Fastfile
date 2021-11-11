@@ -39,6 +39,8 @@ def ensure_temp_keychain(name, password)
 end
 
 platform :ios do
+  lane :release do
+
     skip_docs
 
     # Checking if required environment variables exist
@@ -108,5 +110,6 @@ platform :ios do
     )
 
     delete_temp_keychain(keychain_name)
+
   end
 end
