@@ -2,7 +2,8 @@ name: Release
 
 on:
 
-  - tags:
+  push:
+    tags:
     - 'upload-v*'
 
   # Allows you to run this workflow manually from the Actions a tab
