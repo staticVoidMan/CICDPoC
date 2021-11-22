@@ -5,6 +5,7 @@ APP_PROJECT_NAME = "CICDPoC.xcodeproj"
 APP_WORKSPACE_NAME = "CICDPoC.xcworkspace"
 
 APP_RELEASE_SCHEME = "CICDPoC"
+APP_RELEASE_CONFIGURATION_NAME = "Release"
 
 DEVELOPER_APP_ID = ENV["DEVELOPER_APP_ID"]
 DEVELOPER_APP_IDENTIFIER = ENV["DEVELOPER_APP_IDENTIFIER"]
@@ -72,7 +73,7 @@ platform :ios do
     # Download signing certificates & provisioning profile
     match(
       type: 'appstore',
-      app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
+      app_identifier: DEVELOPER_APP_IDENTIFIER,
       git_basic_authorization: Base64.strict_encode64(GIT_AUTHORIZATION),
       readonly: true,
       keychain_name: keychain_name,
@@ -87,15 +88,15 @@ platform :ios do
 
     # Run Unit Tests
     scan(
-      workspace: "#{APP_WORKSPACE_NAME}",
+      workspace: APP_WORKSPACE_NAME,
       devices: ["iPhone 12"]
     )
 
     # Build & Archive App
     gym(
-      configuration: "Release",
-      workspace: "#{APP_WORKSPACE_NAME}",
-      scheme: "#{APP_RELEASE_SCHEME}",
+      configuration: APP_RELEASE_CONFIGURATION_NAME,
+      workspace: APP_WORKSPACE_NAME,
+      scheme: APP_RELEASE_SCHEME,
       export_method: "app-store",
       export_options: {
         provisioningProfiles: { 
@@ -106,8 +107,8 @@ platform :ios do
 
     # Upload to AppStore
     pilot(
-      apple_id: "#{DEVELOPER_APP_ID}",
-      app_identifier: "#{DEVELOPER_APP_IDENTIFIER}",
+      apple_id: DEVELOPER_APP_ID,
+      app_identifier: DEVELOPER_APP_IDENTIFIER,
       skip_waiting_for_build_processing: true,
       skip_submission: true,
       distribute_external: false,
