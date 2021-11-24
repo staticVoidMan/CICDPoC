@@ -1,0 +1,49 @@
+name: Test
+
+on:
+
+  push:
+    branch: [ test ]
+
+  # Allows you to run this workflow manually from the Actions a tab
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Testing Something
+    runs-on: macos-latest
+    timeout-minutes: 20
+    
+    steps:
+    - name: Checking out repo
+      uses: actions/checkout@v2
+
+    - name: Installing Fastlane Dependencies
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7.2
+
+    - name: Running Fastlane
+      uses: maierj/fastlane-action@v2.0.1
+      with:
+        lane: 'test'
+      env:
+        APPLE_KEY_ID: '${{ secrets.APPLE_KEY_ID }}'
+        APPLE_ISSUER_ID: '${{ secrets.APPLE_ISSUER_ID }}'
+        APPLE_KEY_CONTENT: '${{ secrets.APPLE_KEY_CONTENT }}'
+        APP_STORE_CONNECT_TEAM_ID: '${{ secrets.APP_STORE_CONNECT_TEAM_ID }}'
+        DEVELOPER_PORTAL_TEAM_ID: '${{ secrets.DEVELOPER_PORTAL_TEAM_ID }}'
+        DEVELOPER_APP_ID: '${{ secrets.DEVELOPER_APP_ID }}'
+        DEVELOPER_APP_IDENTIFIER: '${{ secrets.DEVELOPER_APP_IDENTIFIER }}'
+        PROVISIONING_PROFILE_SPECIFIER: '${{ secrets.PROVISIONING_PROFILE_SPECIFIER }}'
+        FASTLANE_APPLE_ID: '${{ secrets.FASTLANE_APPLE_ID }}'
+        MATCH_PASSWORD: '${{ secrets.MATCH_PASSWORD }}'
+        GIT_AUTHORIZATION: '${{ secrets.GIT_AUTHORIZATION }}'
+        TEMP_KEYCHAIN_PASSWORD: '${{ secrets.TEMP_KEYCHAIN_PASSWORD }}'
+        TEMP_KEYCHAIN_USER: '${{ secrets.TEMP_KEYCHAIN_USER }}'
+
+    - name: Check for Artifacts
+      run: |
+        pwd
+        ls
+
