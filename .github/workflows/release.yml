@@ -41,7 +41,7 @@ jobs:
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
         GIT_AUTHORIZATION: ${{ secrets.GIT_AUTHORIZATION }}
         TEMP_KEYCHAIN_PASSWORD: ${{ secrets.TEMP_KEYCHAIN_PASSWORD }}
-        TEMP_KEYCHAIN_USER: ${{ secrets.TEMP_KEYCHAIN_USER }}
+        TEMP_KEYCHAIN_NAME: ${{ secrets. TEMP_KEYCHAIN_NAME }}
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
