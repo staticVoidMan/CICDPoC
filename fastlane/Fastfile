@@ -113,15 +113,15 @@ platform :ios do
     # Checking if required environment variables exist
     ensure_env_vars(
       env_vars: [
-        DEVELOPER_APP_ID,
-        DEVELOPER_APP_IDENTIFIER,
-        PROVISIONING_PROFILE_SPECIFIER,
-        APPLE_ISSUER_ID,
-        APPLE_KEY_ID,
-        APPLE_KEY_CONTENT,
-        TEMP_KEYCHAIN_NAME,
-        TEMP_KEYCHAIN_PASSWORD,
-        MATCH_GIT_BASIC_AUTHORIZATION
+        'DEVELOPER_APP_ID',
+        'DEVELOPER_APP_IDENTIFIER',
+        'PROVISIONING_PROFILE_SPECIFIER',
+        'APPLE_ISSUER_ID',
+        'APPLE_KEY_ID',
+        'APPLE_KEY_CONTENT',
+        'TEMP_KEYCHAIN_NAME',
+        'TEMP_KEYCHAIN_PASSWORD',
+        'MATCH_GIT_BASIC_AUTHORIZATION'
       ]
     )
 
